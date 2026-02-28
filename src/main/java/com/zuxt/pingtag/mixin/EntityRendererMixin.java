@@ -26,10 +26,12 @@ public abstract class EntityRendererMixin<T extends Entity, S extends EntityRend
 
     @Inject(method = "render", at = @At("TAIL"))
     private void renderPingLabel(S state, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, CallbackInfo ci) {
-        if (!Config.get().enabled) return;
+        Config config = Config.get();
+
+        if (!config.enabled) return;
         if (!(state instanceof PlayerEntityRenderState playerState)) return;
         if (playerState.nameLabelPos == null) return;
-        if (playerState.sneaking && Config.get().hideWhenSneaking) return;
+        if (playerState.sneaking && config.hideWhenSneaking) return;
 
         MinecraftClient client = MinecraftClient.getInstance();
         if (client.getNetworkHandler() == null) return;
@@ -38,9 +40,7 @@ public abstract class EntityRendererMixin<T extends Entity, S extends EntityRend
         if (entry == null) return;
 
         int ping = entry.getLatency();
-        if (Config.get().hideIfZero && ping == 0) return;
-
-        Config config = Config.get();
+        if (config.hideIfZero && ping == 0) return;
 
         int pingColor = colorForPing(ping, config);
 
@@ -57,11 +57,18 @@ public abstract class EntityRendererMixin<T extends Entity, S extends EntityRend
         Text label = Text.empty().append(prefixText).append(pingText).append(suffixText);
 
         Vec3d original = playerState.nameLabelPos;
-        double offset = Config.get().offset;
+        float scale = config.nametagScale;
 
-        playerState.nameLabelPos = new Vec3d(original.x, original.y + offset, original.z);
+        double labelY = original.y + config.offset;
+        double compensatedY = labelY / scale + (1.0 / scale - 1.0) * 0.33;
+        playerState.nameLabelPos = new Vec3d(original.x, compensatedY, original.z);
+
+        matrices.push();
+        matrices.scale(scale, scale, scale);
 
         renderLabelIfPresent(state, label, matrices, vertexConsumers, light);
+
+        matrices.pop();
 
         playerState.nameLabelPos = original;
     }
