@@ -3,11 +3,10 @@ plugins {
 	id 'maven-publish'
 }
 
-version = project.mod_version
 group = project.maven_group
 
 base {
-	archivesName = project.archives_base_name
+	archivesName = "PingTag_" + project.mod_version + "_" + project.minecraft_version
 }
 
 repositories {
