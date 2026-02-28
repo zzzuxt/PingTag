@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "pingtag",
+  "version": "${version}",
+  "name": "PingTag",
+  "description": "Adds a second nametag layer containing a player's ping in ms.",
+  "authors": [
+    "Zuxt"
+  ],
+  "contact": {},
+  "license": "CC0-1.0",
+  "icon": "assets/pingtag/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "main": [
+      "com.zuxt.pingtag.PingTag"
+    ],
+    "modmenu": [
+      "com.zuxt.pingtag.helper.ModMenuIntegration"
+    ]
+  },
+  "mixins": [
+    "pingtag.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.18.4",
+    "minecraft": "~1.21.8",
+    "java": ">=21",
+    "fabric-api": "*",
+    "yet_another_config_lib_v3": "*",
+    "modmenu": "*"
+  },
+  "custom": {
+    "modmenu": {
+      "config_screen_factory": "com.zuxt.pingtag.PingTagConfigScreen"
+    }
+  }
+}

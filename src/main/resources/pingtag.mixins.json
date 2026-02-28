@@ -1,0 +1,14 @@
+{
+	"required": true,
+	"package": "com.zuxt.pingtag.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"EntityRendererMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}
