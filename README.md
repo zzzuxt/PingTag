@@ -3,8 +3,8 @@ A lightweight Fabric mod, adding a second nametag above the username that displa
 
 ## Mod Showcase
 > <img width="1920" height="1080" alt="java_3layUFJiMg" src="https://github.com/user-attachments/assets/fb1a3390-b123-4a83-9c60-8310b089a621" />
-> - Dynamic ping colors, from green (low ms) to dark red (high ms).
-> - Fully customizable prefix, suffix, colors, and offset.
+- Dynamic ping colors, from green (low ms) to dark red (high ms).
+- Fully customizable prefix, suffix, colors, and offset.
 
 ## Mod Features:
 - **`Ping display:`** shows each player's ping in ms as a second nametag above their name
