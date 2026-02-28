@@ -31,8 +31,8 @@ public class PingTag implements ModInitializer {
                 if (client.player == null) return;
 
                 Text message = Config.get().enabled
-                        ? Text.literal("PingTag toggled ").append(Text.literal("ON").formatted(Formatting.GREEN))
-                        : Text.literal("PingTag toggled ").append(Text.literal("OFF").formatted(Formatting.RED));
+                        ? Text.literal("[PingTag] Toggled ").append(Text.literal("ON").formatted(Formatting.GREEN))
+                        : Text.literal("[PingTag] Toggled ").append(Text.literal("OFF").formatted(Formatting.RED));
 
                 client.player.sendMessage(message, true);
             }

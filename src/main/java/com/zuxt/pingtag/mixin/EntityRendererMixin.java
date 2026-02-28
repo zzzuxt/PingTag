@@ -30,7 +30,7 @@ public abstract class EntityRendererMixin<T extends Entity, S extends EntityRend
         if (!Config.get().enabled) return;
         if (!(state instanceof PlayerEntityRenderState playerState)) return;
         if (playerState.nameLabelPos == null) return;
-        if (playerState.sneaking && !Config.get().showWhenSneaking) return;
+        if (playerState.sneaking && Config.get().hideWhenSneaking) return;
 
         MinecraftClient client = MinecraftClient.getInstance();
         if (client.getNetworkHandler() == null) return;
@@ -39,26 +39,27 @@ public abstract class EntityRendererMixin<T extends Entity, S extends EntityRend
         if (entry == null) return;
 
         int ping = entry.getLatency();
-        if (Config.get().hideWhenZero && ping == 0) return;
+        if (Config.get().hideIfZero && ping == 0) return;
 
         Config config = Config.get();
 
-        Formatting pingColor = colorForPing(ping);
+        int pingColor = colorForPing(ping, config);
 
         Text prefixText = config.prefix.isEmpty() ? Text.empty() : config.overridePrefixColor
                         ? Text.literal(config.prefix).withColor(config.prefixColor.getRGB())
-                        : Text.literal(config.prefix).formatted(pingColor);
+                        : Text.literal(config.prefix).withColor(pingColor);
 
         Text suffixText = config.suffix.isEmpty() ? Text.empty() : config.overrideSuffixColor
                         ? Text.literal(config.suffix).withColor(config.suffixColor.getRGB())
-                        : Text.literal(config.suffix).formatted(pingColor);
+                        : Text.literal(config.suffix).withColor(pingColor);
 
-        Text pingText = Text.literal(String.valueOf(ping)).formatted(pingColor);
+        Text pingText = Text.literal(String.valueOf(ping)).withColor(pingColor);
 
         Text label = Text.empty().append(prefixText).append(pingText).append(suffixText);
 
         Vec3d original = playerState.nameLabelPos;
-        double offset = 0.28;
+        double offset = Config.get().offset;
+
         playerState.nameLabelPos = new Vec3d(original.x, original.y + offset, original.z);
 
         renderLabelIfPresent(state, label, matrices, vertexConsumers, light);
@@ -87,11 +88,11 @@ public abstract class EntityRendererMixin<T extends Entity, S extends EntityRend
     }
 
     @Unique
-    private Formatting colorForPing(int ping) {
-        if (ping <= 50)  return Formatting.GREEN;
-        if (ping <= 100) return Formatting.YELLOW;
-        if (ping <= 150) return Formatting.GOLD;
-        if (ping <= 200) return Formatting.RED;
-        return Formatting.DARK_RED;
+    private int colorForPing(int ping, Config config) {
+        if (ping <= 50)  return config.pingColorLow.getRGB();
+        if (ping <= 100) return config.pingColorMedium.getRGB();
+        if (ping <= 150) return config.pingColorHigh.getRGB();
+        if (ping <= 200) return config.pingColorVeryHigh.getRGB();
+        return config.pingColorExtreme.getRGB();
     }
 }

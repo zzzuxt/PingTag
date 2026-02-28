@@ -13,46 +13,54 @@ public class Config {
     public static final ConfigClassHandler<Config> HANDLER = ConfigClassHandler.createBuilder(Config.class)
             .id(Identifier.of("pingtag", "config"))
             .serializer(config -> GsonConfigSerializerBuilder.create(config)
-                    .setPath(FabricLoader.getInstance().getConfigDir().resolve("pingtag.json"))
+                    .setPath(FabricLoader.getInstance().getConfigDir().resolve("pingtag_config.json"))
                     .build())
             .build();
-
-    public enum LabelPosition {
-        ABOVE,
-        BELOW
-    }
 
     @SerialEntry
     public boolean enabled = true;
 
     @SerialEntry
-    public boolean showWhenSneaking = true;
+    public boolean hideWhenSneaking = false;
 
     @SerialEntry
-    public boolean hideWhenZero = true;
+    public boolean hideIfZero = true;
 
     @SerialEntry
     public double offset = 0.28;
 
     @SerialEntry
     public String prefix = "";
+
     @SerialEntry
     public boolean overridePrefixColor = false;
+
     @SerialEntry
-    public Color prefixColor = Color.WHITE;
+    public Color prefixColor = new Color(0xFFFFFF);
 
     @SerialEntry
     public String suffix = " ms";
+
     @SerialEntry
     public boolean overrideSuffixColor = false;
-    @SerialEntry
-    public Color prefixColor = Color.WHITE;
 
     @SerialEntry
-    public Color suffixColor = Color.WHITE;
+    public Color suffixColor = new Color(0xFFFFFF);
 
     @SerialEntry
-    public LabelPosition labelPosition = LabelPosition.ABOVE;
+    public Color pingColorLow = new Color(0x55FF55);
+
+    @SerialEntry
+    public Color pingColorMedium = new Color(0xFFFF55);
+
+    @SerialEntry
+    public Color pingColorHigh = new Color(0xFFAA00);
+
+    @SerialEntry
+    public Color pingColorVeryHigh = new Color(0xFF5555);
+
+    @SerialEntry
+    public Color pingColorExtreme = new Color(0xAA0000);
 
     public static Config get() {
         return HANDLER.instance();
