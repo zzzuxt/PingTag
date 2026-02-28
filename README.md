@@ -7,16 +7,10 @@ A lightweight Fabric mod, adding a second nametag above the username that displa
 - Fully customizable prefix, suffix, colors, and offset.
 
 ## Mod Features:
-- **`Ping display:`** shows each player's ping in ms as a second nametag above their name
-- **`Color-coded ping:`** ping is automatically colored based on latency range
-- **`Toggle keybind:`** press **-** (editable) to quickly toggle the mod on and off with an action bar notification
-- **`NPC filtering:`** players not present in the server's tab list (NPCs, bots, fake players) are automatically skipped
-- **`Customizable prefix & suffix:`** add any text before or after the ping value
-- **`Custom text colors:`** optionally override the prefix and suffix colors independently
-- **`Custom ping colors:`** fully customize the color for each ping range in the config screen
-- **`Adjustable offset:`** control the vertical distance between the nametag and the ping label
-- **`Hide when sneaking:`** optionally hide the ping label when a player is crouching
-- **`Hide if zero:`** optionally hide the ping label if the value is zero
+- **`Ping Display`** Shows each player's ping in ms as a second nametag above their name.
+- **`Color-coded ping:`** - Ping is automatically colored based on ping value/range.
+- **`Toggle Keybind (Default: "-")`** - Press a configurable keybind to toggle the mod, with an action bar notification.
+- **`NPC/Fake Player Filtering`** - NPC's, bots, or fake players will not have a ping nametag rendered.
 
 ## Config/Settings (ModMenu/YACL):
 - **`Enable`** - Toggles the ping nametag display.
