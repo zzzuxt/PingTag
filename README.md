@@ -1,6 +1,9 @@
 ## PingTag Fabric Mod
 A lightweight Fabric mod, adding a second nametag above the username that displays a player's ping value, akin to Lunar Client's ping display.
 
+## Download
+Download the mod on [Modrinth](https://modrinth.com/mod/pingtag), or the [Releases](https://github.com/zzzuxt/PingTag/releases) page.
+
 ## Mod Showcase
 > <img width="1920" height="1080" alt="java_3layUFJiMg" src="https://github.com/user-attachments/assets/fb1a3390-b123-4a83-9c60-8310b089a621" />
 - Dynamic ping colors, from green (low ms) to dark red (high ms).
@@ -8,7 +11,7 @@ A lightweight Fabric mod, adding a second nametag above the username that displa
 
 ## Mod Features:
 - **`Ping Display`** - Shows each player's ping in ms as a second nametag above their name.
-- **`Color-coded ping:`** - Ping is automatically colored based on ping value/range.
+- **`Dynamic Ping Colors`** - Ping is automatically colored based on ping value/range.
 - **`Toggle Keybind (Default: "-")`** - Press a configurable keybind to toggle the mod, with an action bar notification.
 - **`NPC/Fake Player Filtering`** - NPC's, bots, or fake players will not have a ping nametag rendered.
 
