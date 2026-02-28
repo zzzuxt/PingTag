@@ -11,7 +11,7 @@ Download the mod on [Modrinth](https://modrinth.com/mod/pingtag), or the [Releas
 
 ## Mod Features:
 - **`Ping Display`** - Shows each player's ping in ms as a second nametag above their name.
-- **`Color-coded ping:`** - Ping is automatically colored based on ping value/range.
+- **`Dynamic Ping Colors`** - Ping is automatically colored based on ping value/range.
 - **`Toggle Keybind (Default: "-")`** - Press a configurable keybind to toggle the mod, with an action bar notification.
 - **`NPC/Fake Player Filtering`** - NPC's, bots, or fake players will not have a ping nametag rendered.
 
