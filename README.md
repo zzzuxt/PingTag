@@ -7,7 +7,7 @@ A lightweight Fabric mod, adding a second nametag above the username that displa
 - Fully customizable prefix, suffix, colors, and offset.
 
 ## Mod Features:
-- **`Ping Display`** Shows each player's ping in ms as a second nametag above their name.
+- **`Ping Display`** - Shows each player's ping in ms as a second nametag above their name.
 - **`Color-coded ping:`** - Ping is automatically colored based on ping value/range.
 - **`Toggle Keybind (Default: "-")`** - Press a configurable keybind to toggle the mod, with an action bar notification.
 - **`NPC/Fake Player Filtering`** - NPC's, bots, or fake players will not have a ping nametag rendered.
@@ -24,10 +24,10 @@ A lightweight Fabric mod, adding a second nametag above the username that displa
 - **`Override Suffix Color`** - Use a custom color for the suffix instead of the ping color.
 - **`Suffix Color`** - Color of the suffix text.
 - **`Ping Range Colors`** - Customize the color for each of the five ping ranges.
-- - **`0 – 50ms`** - Green
-- - **`51 – 100ms`** - Yellow
-- - **`101 – 150ms`** - Gold
-- - **`151 – 200ms`** - Red
-- - **`200ms+`** - Dark Red
+  - **`0 – 50ms`** - Green
+  - **`51 – 100ms`** - Yellow
+  - **`101 – 150ms`** - Gold
+  - **`151 – 200ms`** - Red
+  - **`200ms+`** - Dark Red
 
 Settings are saved in your `.minecraft\config` folder as `pingtag_config.json`.
