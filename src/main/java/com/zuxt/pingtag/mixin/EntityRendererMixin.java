@@ -57,11 +57,13 @@ public abstract class EntityRendererMixin<T extends Entity, S extends EntityRend
         Text label = Text.empty().append(prefixText).append(pingText).append(suffixText);
 
         Vec3d original = playerState.nameLabelPos;
-        float scale = config.nametagScale;
+        Text originalDisplayName = playerState.displayName;
+        float scale = (float) config.nametagScale;
 
         double labelY = original.y + config.offset;
         double compensatedY = labelY / scale + (1.0 / scale - 1.0) * 0.33;
         playerState.nameLabelPos = new Vec3d(original.x, compensatedY, original.z);
+        playerState.displayName = label;
 
         matrices.push();
         matrices.scale(scale, scale, scale);
@@ -71,6 +73,7 @@ public abstract class EntityRendererMixin<T extends Entity, S extends EntityRend
         matrices.pop();
 
         playerState.nameLabelPos = original;
+        playerState.displayName = originalDisplayName;
     }
 
     @Unique

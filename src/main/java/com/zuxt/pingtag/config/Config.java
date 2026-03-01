@@ -30,7 +30,7 @@ public class Config {
     public double offset = 0.28;
 
     @SerialEntry
-    public float nametagScale = 1.0f;
+    public double nametagScale = 1.0;
 
     @SerialEntry
     public String prefix = "";
