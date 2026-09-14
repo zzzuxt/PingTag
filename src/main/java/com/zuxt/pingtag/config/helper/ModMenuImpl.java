@@ -5,7 +5,7 @@ import com.terraformersmc.modmenu.api.ModMenuApi;
 import com.zuxt.pingtag.config.ConfigScreen;
 
 @SuppressWarnings("unused")
-public class ModMenuIntegration implements ModMenuApi {
+public class ModMenuImpl implements ModMenuApi {
 
     @Override
     public ConfigScreenFactory<?> getModConfigScreenFactory() {

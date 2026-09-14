@@ -3,7 +3,9 @@
 	"package": "com.zuxt.pingtag.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"client": [
-		"PingTagMixin", "PingTagFrameMixin", "PingTagTextDisplayMixin"
+		"render.AvatarRendererMixin",
+		"frame.GameRendererMixin",
+		"text.TextDisplayRendererMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

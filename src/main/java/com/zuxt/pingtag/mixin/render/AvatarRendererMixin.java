@@ -1,7 +1,7 @@
-package com.zuxt.pingtag.mixin;
+package com.zuxt.pingtag.mixin.render;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.zuxt.pingtag.PingTagLabels;
+import com.zuxt.pingtag.features.TagLabels;
 import com.zuxt.pingtag.config.Config;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.SubmitNodeCollector;
@@ -17,14 +17,14 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(AvatarRenderer.class)
-public class PingTagMixin {
+public class AvatarRendererMixin {
     @Inject(method = "submitNameTag(Lnet/minecraft/client/renderer/entity/state/AvatarRenderState;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/SubmitNodeCollector;Lnet/minecraft/client/renderer/state/CameraRenderState;)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/renderer/SubmitNodeCollector;submitNameTag(Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/world/phys/Vec3;ILnet/minecraft/network/chat/Component;ZIDLnet/minecraft/client/renderer/state/CameraRenderState;)V", ordinal = 1))
     private void pingtag$renderPingLabel(AvatarRenderState state, PoseStack poses, SubmitNodeCollector collector, CameraRenderState camera, CallbackInfo ci) {
         Minecraft mc = Minecraft.getInstance();
         if (mc.level == null || state.nameTag == null || state.nameTagAttachment == null || !(mc.level.getEntity(state.id) instanceof Player player)) return;
 
-        Component label = PingTagLabels.label(player, state.isDiscrete);
-        if (label == null || !PingTagLabels.claim(player)) return;
+        Component label = TagLabels.label(player, state.isDiscrete);
+        if (label == null || !TagLabels.claim(player)) return;
 
         float scale = (float) Config.get().nametagScale;
         Vec3 anchor = state.nameTagAttachment;
