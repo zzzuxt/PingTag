@@ -3,7 +3,7 @@
 # PingTag - Fabric Mod
 A lightweight Fabric mod, adding a second nametag label above Player's usernames, that their ping value.
 
-![Stratus Logo](https://cdn.modrinth.com/data/cached_images/292f21d1373e9c9afc4723636815143730ba9d28.png)
+![PingTag Logo](https://cdn.modrinth.com/data/GkE2gsno/46a64437a379f298e2c8397f6c7f9313140939d4.png)
 
 [![Download on Modrinth](https://raw.githubusercontent.com/intergrav/devins-badges/c7fd18efdadd1c3f12ae56b49afd834640d2d797/assets/cozy/available/modrinth_vector.svg)](https://modrinth.com/mod/pingtag)
 [![Requires Fabric API](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/requires/fabric-api_vector.svg)](https://modrinth.com/mod/fabric-api)
