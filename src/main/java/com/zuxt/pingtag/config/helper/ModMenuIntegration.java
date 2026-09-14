@@ -1,4 +1,4 @@
-package com.zuxt.pingtag.helper;
+package com.zuxt.pingtag.config.helper;
 
 import com.terraformersmc.modmenu.api.ConfigScreenFactory;
 import com.terraformersmc.modmenu.api.ModMenuApi;
