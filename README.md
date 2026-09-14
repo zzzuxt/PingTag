@@ -1,6 +1,6 @@
 <div align="center">
   
-# PingTag - Fabric Mod
+# PingTag - Fabric Mod (1.21.11)
 A lightweight Fabric mod adding a second nametag label above usernames, displaying the ping value.
 
 ![PingTag Logo](https://cdn.modrinth.com/data/GkE2gsno/46a64437a379f298e2c8397f6c7f9313140939d4.png)
