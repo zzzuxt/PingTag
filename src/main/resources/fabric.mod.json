@@ -19,7 +19,7 @@
       "com.zuxt.pingtag.PingTag"
     ],
     "modmenu": [
-      "com.zuxt.pingtag.helper.ModMenuIntegration"
+      "com.zuxt.pingtag.config.helper.ModMenuImpl"
     ]
   },
   "mixins": [
