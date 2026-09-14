@@ -56,7 +56,7 @@ public class TextDisplayRendererMixin {
         float scale = (float) Config.get().nametagScale;
         poseStack.pushPose();
         try {
-            float y = -10.35f;
+            float y = -10.35f * scale;
             poseStack.translate(textDisplayEntityRenderState.cachedInfo.width() / 2.0f, y - Config.get().offset / 0.025 - 0.8, 0);
             poseStack.scale(scale, scale, scale);
             byte flags = textDisplayEntityRenderState.textRenderState.flags();

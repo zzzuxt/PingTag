@@ -31,7 +31,7 @@ public class AvatarRendererMixin {
 
         poses.pushPose();
         try {
-            poses.translate(anchor.x, anchor.y + 0.5 + 9.0 * 1.15 * 0.025 + Config.get().offset + 0.02, anchor.z);
+            poses.translate(anchor.x, anchor.y + 0.5 + 9.0 * 1.15 * 0.025 * scale + Config.get().offset + 0.022, anchor.z);
             poses.scale(scale, scale, scale);
             collector.submitNameTag(poses, new Vec3(0, -0.5, 0), state.showExtraEars ? -10 : 0, label, !state.isDiscrete, state.lightCoords, state.distanceToCameraSq, camera);
         } finally {
