@@ -22,46 +22,37 @@ public class Config {
 
     @SerialEntry
     public boolean hideWhenSneaking = false;
-
     @SerialEntry
     public boolean hideIfZero = true;
 
     @SerialEntry
     public double offset = 0.0;
-
     @SerialEntry
     public double nametagScale = 1.0;
 
     @SerialEntry
     public String prefix = "";
-
-    @SerialEntry
-    public boolean overridePrefixColor = false;
-
-    @SerialEntry
-    public Color prefixColor = new Color(0xFFFFFF);
-
     @SerialEntry
     public String suffix = " ms";
 
     @SerialEntry
-    public boolean overrideSuffixColor = false;
+    public boolean overridePrefixColor = false;
+    @SerialEntry
+    public Color prefixColor = new Color(0xFFFFFF);
 
+    @SerialEntry
+    public boolean overrideSuffixColor = false;
     @SerialEntry
     public Color suffixColor = new Color(0xFFFFFF);
 
     @SerialEntry
     public Color pingColorLow = new Color(0x55FF55);
-
     @SerialEntry
     public Color pingColorMedium = new Color(0xFFFF55);
-
     @SerialEntry
     public Color pingColorHigh = new Color(0xFFAA00);
-
     @SerialEntry
     public Color pingColorVeryHigh = new Color(0xFF5555);
-
     @SerialEntry
     public Color pingColorExtreme = new Color(0xAA0000);
 
