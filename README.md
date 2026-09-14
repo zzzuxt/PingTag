@@ -1,10 +1,15 @@
-## PingTag Mod
-A lightweight Fabric mod, adding a second nametag label above Player's usernames, that their ping value.
+<div align="center">
 
-## Download
-You can download the mod from;
-- [Modrinth](https://modrinth.com/mod/pingtag)
-- [Releases page](https://github.com/zzzuxt/PingTag/releases)
+# PingTag - Fabric Mod (26.1.2)
+A lightweight Fabric mod adding a second nametag label above usernames, displaying the ping value.
+
+![PingTag Logo](https://cdn.modrinth.com/data/GkE2gsno/46a64437a379f298e2c8397f6c7f9313140939d4.png)
+
+[![Download on Modrinth](https://raw.githubusercontent.com/intergrav/devins-badges/c7fd18efdadd1c3f12ae56b49afd834640d2d797/assets/cozy/available/modrinth_vector.svg)](https://modrinth.com/mod/pingtag)
+[![Requires Fabric API](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/requires/fabric-api_vector.svg)](https://modrinth.com/mod/fabric-api)
+[![View on GitHub](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/social/github-plural_vector.svg)](https://github.com/zzzuxt/PingTag)
+
+</div>
 
 ## Showcase
 ![Mod Showcase](https://cdn.modrinth.com/data/cached_images/85f7e2c30ad7e0e8c2612fd157111f78ca229af4.png)
@@ -13,7 +18,7 @@ You can download the mod from;
 - **`Ping Display`** - Shows each player's ping in ms as a second nametag above their name.
 - **`Dynamic Ping Colors`** - Ping is automatically colored based on ping value/range.
 - **`Toggle Keybind (Default: "P")`** - Press a configurable keybind to toggle the mod, with an action bar notification.
-- **`NPC/Fake Player Filtering`** - NPC's, bots, or fake players will not have a ping nametag rendered.
+- **`NPC/Fake Player Filtering`** - NPCs, bots, or fake players will not have a ping nametag rendered.
 
 ## Config/Settings (ModMenu/YACL):
 - **`Enable`** - Toggles the ping nametag display.
@@ -33,4 +38,4 @@ You can download the mod from;
   - **`151 – 200ms`** - Red
   - **`200ms+`** - Dark Red
 
-Settings are saved in your `.minecraft\config` folder as `pingtag_config.json`.
+PingTag uses a YACL configuration, and is saved in your `.minecraft\config` folder as `pingtag_config.json`.
